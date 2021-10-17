@@ -9,6 +9,6 @@ public class Registration {
         String name = scanner.nextLine();
         System.out.print("E-mail: ");
         String email = scanner.nextLine();
-        System.out.println(name + " with " +email);
+        System.out.println(name + " registered with " +email +".");
     }
 }
