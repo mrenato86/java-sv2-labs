@@ -17,7 +17,7 @@ public class DistanceMain {
         System.out.println("Distance is a " + distanceInstance.isExact() + " " + distanceInstance.getDistanceInKm() + "km");
 
         int shredded = (int) distanceInstance.getDistanceInKm();
-        System.out.println("Shredded value: " + shredded);
+        System.out.println("Shredded value: " + shredded + "km");
 
     }
 }
