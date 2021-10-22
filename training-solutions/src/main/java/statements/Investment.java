@@ -5,12 +5,11 @@ public class Investment {
     private double cost = 0.3;
     private int fund;
     private int interestRate;
-    private boolean active;
+    private boolean active = true;
 
     public Investment(int fund, int interestRate) {
         this.fund = fund;
         this.interestRate = interestRate;
-        this.active = true;
     }
 
     public int getFund() {

@@ -8,7 +8,6 @@ public class InvestmentMain {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Fund: ");
         int fund = scanner.nextInt();
-        scanner.nextLine();
         System.out.print("Interest Rate: ");
         int interestRate = scanner.nextInt();
 
