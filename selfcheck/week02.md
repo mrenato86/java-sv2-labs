@@ -5,18 +5,18 @@ a bonyolultabb típusokat fogjátok alapszinten megismerni.
 
 ## A nyelv építőkövei
 
-* [ ] [Kódolási konvenciók videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709797-kodolasi-konvenciok)
-* [ ] Kódolási konvenciók gyakorlati feladat
-* [ ] [Literálok és lokális változók videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709851-literalok-es-lokalis-valtozok)
-* [ ] Literálok és lokális változók gyakorlati feladat
-* [ ] [Kifejezések és utasítások videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709849-kifejezesek-es-utasitasok)
-* [ ] Kifejezések és utasítások gyakorlati feladat
-* [ ] [Csomagok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709796-csomagok)
-* [ ] Csomagok gyakorlati feladat
-* [ ] [Java API videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709757-java-api)
-* [ ] Java API gyakorlati feladat
-* [ ] [JAR állomány videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709835-jar-allomany)
-* [ ] JAR állomány gyakorlati feladat
+* [x] [Kódolási konvenciók videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709797-kodolasi-konvenciok)
+* [x] Kódolási konvenciók gyakorlati feladat
+* [x] [Literálok és lokális változók videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709851-literalok-es-lokalis-valtozok)
+* [x] Literálok és lokális változók gyakorlati feladat
+* [x] [Kifejezések és utasítások videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709849-kifejezesek-es-utasitasok)
+* [x] Kifejezések és utasítások gyakorlati feladat
+* [x] [Csomagok videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709796-csomagok)
+* [x] Csomagok gyakorlati feladat
+* [x] [Java API videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709757-java-api)
+* [x] Java API gyakorlati feladat
+* [x] [JAR állomány videó](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709835-jar-allomany)
+* [x] JAR állomány gyakorlati feladat
 * [ ] [Szöveges típus](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/10709758-szoveges-tipus)
 * [ ] Szöveges típus gyakorlati feladat
 * [ ] [Sortörés kezelése](https://e-learning.training360.com/courses/take/java-se-alapok-java-nyelvi-elemek/lessons/28188842-sortores-kezelese)
@@ -53,11 +53,11 @@ a bonyolultabb típusokat fogjátok alapszinten megismerni.
 
 ## Konzultációk
 
-* [ ] 2021-10-18 konzultáció részvétel/videó
-* [ ] 2021-10-18 konzultáció gyakorlati feladat
-* [ ] 2021-10-19 konzultáció részvétel/videó
-* [ ] 2021-10-19 konzultáció gyakorlati feladat
-* [ ] 2021-10-21 konzultáció részvétel/videó
-* [ ] 2021-10-21 konzultáció gyakorlati feladat
-* [ ] 2021-10-22 konzultáció részvétel/videó
-* [ ] 2021-10-22 konzultáció gyakorlati feladat
+* [x] 2021-10-18 konzultáció részvétel/videó
+* [x] 2021-10-18 konzultáció gyakorlati feladat
+* [x] 2021-10-19 konzultáció részvétel/videó
+* [x] 2021-10-19 konzultáció gyakorlati feladat
+* [x] 2021-10-21 konzultáció részvétel/videó
+* [x] 2021-10-21 konzultáció gyakorlati feladat
+* [x] 2021-10-22 konzultáció részvétel/videó
+* [x] 2021-10-22 konzultáció gyakorlati feladat
