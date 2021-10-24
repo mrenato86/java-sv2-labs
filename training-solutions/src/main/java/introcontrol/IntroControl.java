@@ -56,13 +56,20 @@ public class IntroControl {
     }
     //8.
     public void printNumbersBetweenAnyDirection(int a, int b){
-        if (b > a) {
-            printNumbersBetween(a,b);
-        } else {
-            for (int i = a; i >= b; i--) {
-                System.out.println(i);
-            }
+        int direction = a<=b ? 1 : -1;
+        b+=direction;
+
+        for (int i = a; i != b; i += direction) {
+            System.out.println(i);
         }
+//        //Alternative:
+//        if (b > a) {
+//            printNumbersBetween(a,b);
+//        } else {
+//            for (int i = a; i >= b; i--) {
+//                System.out.println(i);
+//            }
+//        }
     }
     //9.
     public void printOddNumbers(int max){
