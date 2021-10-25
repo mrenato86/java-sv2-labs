@@ -1,4 +1,4 @@
-# Második hét (2021-10-18 - 2021-10-22)
+﻿# Második hét (2021-10-18 - 2021-10-22)
 
 Ezen a héten a Java nyelv építőköveit, valamint
 a bonyolultabb típusokat fogjátok alapszinten megismerni.
