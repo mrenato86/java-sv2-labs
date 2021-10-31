@@ -1,4 +1,4 @@
-package primitivetypes.primitivetypes.exam;
+package primitivetypes.exam;
 
 import java.time.LocalDate;
 import java.util.Scanner;
