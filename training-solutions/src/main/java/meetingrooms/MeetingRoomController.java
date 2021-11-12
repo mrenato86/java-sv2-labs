@@ -63,8 +63,7 @@ public class MeetingRoomController {
                 case 8:
                     System.out.print(CommunicationItem.ASK_PARAMETER);
                     if (!scanner.hasNextInt()) {
-                        System.out.println(CommunicationItem.TELL_WRONG_INPUT);
-                        scanner.nextLine();
+                        System.out.println(CommunicationItem.TELL_WRONG_INPUT + scanner.nextLine());
                         break;
                     }
                     parameter = scanner.nextLine();
@@ -77,7 +76,7 @@ public class MeetingRoomController {
                 default:
                     System.out.println(CommunicationItem.TELL_WRONG_MENU);
             }
-            System.out.print(CommunicationItem.ASK_CONTINUE + "\n");
+            System.out.println(CommunicationItem.ASK_CONTINUE);
             scanner.nextLine();
         }
 
@@ -95,14 +94,14 @@ public class MeetingRoomController {
         String name = scanner.nextLine();
         System.out.print(CommunicationItem.ASK_LENGTH);
         if (!scanner.hasNextInt()) {
-            System.out.println(CommunicationItem.TELL_WRONG_INPUT);
+            System.out.println(CommunicationItem.TELL_WRONG_INPUT + scanner.nextLine());
             System.out.println(CommunicationItem.TELL_FAILURE);
             return;
         }
         int length = scanner.nextInt();
         System.out.print(CommunicationItem.ASK_WIDTH);
         if (!scanner.hasNextInt()) {
-            System.out.println(CommunicationItem.TELL_WRONG_INPUT);
+            System.out.println(CommunicationItem.TELL_WRONG_INPUT + scanner.nextLine());
             System.out.println(CommunicationItem.TELL_FAILURE);
             return;
         }

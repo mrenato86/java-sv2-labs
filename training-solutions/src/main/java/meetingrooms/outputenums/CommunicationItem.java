@@ -13,7 +13,7 @@ public enum CommunicationItem {
     TELL_SUCCESS("Tárgyaló hozzáadva!"),
     TELL_FAILURE("Tárgyaló hozzáadása sikertelen!"),
     TELL_WRONG_MENU("Nem létező menüpont!"),
-    TELL_WRONG_INPUT("Hibás adat!");
+    TELL_WRONG_INPUT("Hibás adat: ");
 
     private final String text;
 
