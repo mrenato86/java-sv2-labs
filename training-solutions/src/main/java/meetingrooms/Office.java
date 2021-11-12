@@ -11,6 +11,10 @@ public class Office {
         meetingRooms.add(meetingRoom);
     }
 
+    public boolean hasAnyMeetingRoom() {
+        return !meetingRooms.isEmpty();
+    }
+
     public void printNames() {
         for (MeetingRoom room : meetingRooms) {
             System.out.println("\t" + room.getName());
