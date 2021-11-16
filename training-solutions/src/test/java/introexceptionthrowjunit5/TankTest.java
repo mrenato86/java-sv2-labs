@@ -9,7 +9,7 @@ class TankTest {
     Tank tank = new Tank();
 
     @Test
-    void testModifyAngleTest() {
+    void testModifyAngle() {
         tank.modifyAngle(2090);
         assertEquals(290, tank.getAngle());
 
@@ -18,7 +18,7 @@ class TankTest {
     }
 
     @Test
-    void testModifyAngleTestException() {
+    void testModifyAngleException() {
         IllegalArgumentException iae = assertThrows(IllegalArgumentException.class, () -> tank.modifyAngle(2000));
         assertEquals("Turret can't be in a position between 80° and 280°!", iae.getMessage());
     }
