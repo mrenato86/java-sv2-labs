@@ -2,7 +2,7 @@ package algorithmssum.transactions;
 
 public class Transaction {
 
-    protected String accountNumber;
+    private String accountNumber;
     private TransactionOperation transactionOperation;
     private int amount;
 
