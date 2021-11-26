@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class BankTransactionTest {
 
     @BeforeEach
-    void init(){
+    void init() {
         BankTransaction.initTheDay();
     }
 
@@ -39,6 +39,17 @@ class BankTransactionTest {
         assertEquals(20_000L, BankTransaction.getCurrentMaxValue());
         assertEquals(30_000L, BankTransaction.getSumOfTransactions());
         assertEquals(15_000L, BankTransaction.getAverageOfTransaction());
+    }
+
+    @Test
+    void testInvalidTransaction() {
+        IllegalArgumentException iae = assertThrows(IllegalArgumentException.class,
+                () -> new BankTransaction(10_000_001));
+        assertEquals("Invalid transaction for Value: 10000001", iae.getMessage());
+
+        iae = assertThrows(IllegalArgumentException.class,
+                () -> new BankTransaction(0));
+        assertEquals("Invalid transaction for Value: 0", iae.getMessage());
     }
 
 }
