@@ -28,6 +28,6 @@ public class SimpleTasks implements Runnable {
         while (next) {
             next = nextStep();
         }
-        
+
     }
 }
