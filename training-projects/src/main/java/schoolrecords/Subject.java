@@ -22,7 +22,12 @@ public class Subject {
         return this.subjectName.equals(other.subjectName);
     }
 
-    private boolean isEmpty(String str) {
-        return str == null || str.isBlank();
+    @Override
+    public String toString() {
+        return subjectName;
+    }
+
+    private boolean isEmpty(String value) {
+        return value == null || value.isBlank();
     }
 }

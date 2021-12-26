@@ -29,6 +29,10 @@ public class Mark {
         return tutor;
     }
 
+    public String toStringWithSubject() {
+        return String.format("%s: %s", subject, markType);
+    }
+
     @Override
     public String toString() {
         return markType.toString();

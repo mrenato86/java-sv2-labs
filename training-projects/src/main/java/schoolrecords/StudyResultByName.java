@@ -21,7 +21,7 @@ public class StudyResultByName {
         return studyAverage;
     }
 
-    private boolean isEmpty(String str) {
-        return str == null || str.isBlank();
+    private boolean isEmpty(String value) {
+        return value == null || value.isBlank();
     }
 }
