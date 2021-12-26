@@ -6,6 +6,9 @@ public class StudyResultByName {
     private double studyAverage;
 
     public StudyResultByName(String studentName, double studyAverage) {
+        if (isEmpty(studentName)) {
+            throw new IllegalArgumentException("Student name must not be null or empty.");
+        }
         this.studentName = studentName;
         this.studyAverage = studyAverage;
     }
@@ -16,5 +19,9 @@ public class StudyResultByName {
 
     public double getStudyAverage() {
         return studyAverage;
+    }
+
+    private boolean isEmpty(String str) {
+        return str == null || str.isBlank();
     }
 }

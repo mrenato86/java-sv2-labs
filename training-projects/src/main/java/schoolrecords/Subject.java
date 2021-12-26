@@ -5,14 +5,24 @@ public class Subject {
     private String subjectName;
 
     public Subject(String subjectName) {
-        this.subjectName = subjectName;
+        if (isEmpty(subjectName)) {
+            throw new IllegalArgumentException("Subject name must not be null or empty!");
+        }
+        this.subjectName = subjectName.strip();
     }
 
     public String getSubjectName() {
         return subjectName;
     }
 
-    public boolean equalTo(Subject other){
+    public boolean equalTo(Subject other) {
+        if (other == null) {
+            throw new NullPointerException("Subject must not be null!");
+        }
         return this.subjectName.equals(other.subjectName);
+    }
+
+    private boolean isEmpty(String str) {
+        return str == null || str.isBlank();
     }
 }
