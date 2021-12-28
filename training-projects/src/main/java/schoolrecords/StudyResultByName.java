@@ -21,6 +21,11 @@ public class StudyResultByName {
         return studyAverage;
     }
 
+    @Override
+    public String toString() {
+        return String.format("%s: %.2f", studentName, studyAverage);
+    }
+
     private boolean isEmpty(String value) {
         return value == null || value.isBlank();
     }
