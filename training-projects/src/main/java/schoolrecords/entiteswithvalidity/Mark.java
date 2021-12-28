@@ -1,13 +1,14 @@
-package schoolrecords;
+package schoolrecords.entiteswithvalidity;
 
-public class Mark {
+public class Mark implements HasValidity {
 
     private final MarkType markType;
     private final Subject subject;
     private final Tutor tutor;
 
     public Mark(MarkType markType, Subject subject, Tutor tutor) {
-        validateArgs(markType, subject, tutor);
+        HasValidity.forArguments("Both subject and tutor must be provided!", subject, tutor);
+        HasValidity.forNullity(markType, "MarkType");
         this.markType = markType;
         this.subject = subject;
         this.tutor = tutor;
@@ -36,15 +37,6 @@ public class Mark {
     @Override
     public String toString() {
         return markType.toString();
-    }
-
-    private void validateArgs(MarkType markType, Subject subject, Tutor tutor) {
-        if (subject == null || tutor == null) {
-            throw new NullPointerException("Both subject and tutor must be provided!");
-        }
-        if (markType == null) {
-            throw new NullPointerException("MarkType must be not null!");
-        }
     }
 
 }

@@ -1,5 +1,6 @@
 package schoolrecords;
 
+import schoolrecords.entiteswithvalidity.*;
 import schoolrecords.outputenums.CommunicationItem;
 import schoolrecords.outputenums.MenuItem;
 
@@ -65,7 +66,8 @@ public class SchoolRecordsController {
                         parameter = getTextInput(ASK_STUDENT);
                         System.out.println(classRecords.removeStudent(new Student(parameter)) ? TELL_SUCCESS : TELL_FAILURE);
                         break;
-                    case 5://TODO implement this
+                    case 5:
+                        repetition();
                         break;
                     case 6:
                         System.out.println("\t" + classRecords.calculateClassAverage());
@@ -97,13 +99,29 @@ public class SchoolRecordsController {
             getTextInput(ASK_CONTINUE);
             System.out.println();
         }
-
     }
 
     private void printMenu() {
         for (MenuItem item : MenuItem.values()) {
             System.out.println(item);
         }
+    }
+
+    private void repetition() {
+        Student student = classRecords.repetition();
+        System.out.println(TELL_RESULT + student.getName());
+        MarkType markType;
+        try {
+            markType = MarkType.valueOf(getTextInput(ASK_MARK));
+        } catch (IllegalArgumentException iae) {
+            throw new IllegalStateException(TELL_WRONG_INPUT.toString(), iae);
+        }
+        Subject subject = getSubjectInput();
+        Tutor tutor = getTutorInput();
+        if (!tutor.tutorTeachingSubject(subject)) {
+            throw new IllegalStateException(TELL_WRONG_INPUT.toString());
+        }
+        student.grading(new Mark(markType, subject, tutor));
     }
 
     private void listStudyResults() {
@@ -116,11 +134,16 @@ public class SchoolRecordsController {
         for (int i = 0; i < subjects.size(); i++) {
             System.out.println((i + 1) + ". " + subjects.get(i).getSubjectName());
         }
-        int subject = getNumberInput(ASK_SUBJECT) - 1;
-        if (subject < 0 || subject > subjects.size()) {
-            throw new IllegalStateException(TELL_WRONG_INPUT.toString());
-        }
+        int subject = getNumberInput(ASK_SUBJECT, subjects.size()) - 1;
         return subjects.get(subject);
+    }
+
+    private Tutor getTutorInput() {
+        for (int i = 0; i < tutors.size(); i++) {
+            System.out.println((i + 1) + ". " + tutors.get(i).getName());
+        }
+        int tutor = getNumberInput(ASK_TUTOR, tutors.size()) - 1;
+        return tutors.get(tutor);
     }
 
     private int getNumberInput(CommunicationItem question) {
@@ -130,6 +153,14 @@ public class SchoolRecordsController {
             return -1;
         }
         return scanner.nextInt();
+    }
+
+    private int getNumberInput(CommunicationItem question, int end) {
+        int result = getNumberInput(question);
+        if (result < 0 || result > end) {
+            throw new IllegalStateException(TELL_WRONG_INPUT.toString());
+        }
+        return result;
     }
 
     private String getTextInput(CommunicationItem question) {

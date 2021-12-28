@@ -1,6 +1,6 @@
-package schoolrecords;
+package schoolrecords.entiteswithvalidity;
 
-public enum MarkType {
+public enum MarkType implements HasValidity {
 
     A(5, "excellent"),
     B(4, "very good"),

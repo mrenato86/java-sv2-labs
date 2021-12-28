@@ -1,5 +1,9 @@
 package schoolrecords;
 
+import schoolrecords.entiteswithvalidity.HasValidity;
+import schoolrecords.entiteswithvalidity.Student;
+import schoolrecords.entiteswithvalidity.Subject;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -8,10 +12,11 @@ public class ClassRecords {
 
     private String className;
     private Random random;
-    private List<Student> students = new ArrayList<>();
+    private final List<Student> students = new ArrayList<>();
 
     public ClassRecords(String className, Random random) {
-        validateArgs(className, random);
+        HasValidity.forEmptiness(className);
+        HasValidity.forGeneralNullity(random);
         this.className = className;
         this.random = random;
     }
@@ -21,9 +26,7 @@ public class ClassRecords {
     }
 
     public boolean addStudent(Student student) {
-        if (student == null) {
-            throw new NullPointerException("Student must not be null!");
-        }
+        HasValidity.forNullity(student, "Student");
         if (students.isEmpty()) {
             return students.add(student);
         }
@@ -36,9 +39,7 @@ public class ClassRecords {
     }
 
     public boolean removeStudent(Student student) {
-        if (student == null) {
-            throw new NullPointerException("Student must not be null!");
-        }
+        HasValidity.forNullity(student, "Student");
         try {
             Student sought = findStudentByName(student.getName());
             return students.remove(sought);
@@ -47,37 +48,30 @@ public class ClassRecords {
         }
     }
 
-    public double calculateClassAverage() {
+    private double calculateAverageGeneral(Subject subject) {
         if (students.isEmpty()) {
             throw new ArithmeticException("No student in the class, average calculation aborted!");
         }
-        double sum = 0;
+        List<Double> averages = new ArrayList<>();
         for (Student student : students) {
-            sum += student.calculateAverage();
+            double studentAvg = subject == null ? student.calculateAverage() : student.calculateSubjectAverage(subject);
+            if (studentAvg > 0) {
+                averages.add(studentAvg);
+            }
         }
-        if (sum == 0) {
+        if (averages.isEmpty()) {
             throw new ArithmeticException("No marks present, average calculation aborted!");
         }
-        return Math.round(100 * sum / students.size()) / 100.;
+        return SchoolStatistics.getAvg(averages);
+    }
+
+    public double calculateClassAverage() {
+        return calculateAverageGeneral(null);
     }
 
     public double calculateClassAverageBySubject(Subject subject) {
-        if (students.isEmpty()) {
-            throw new ArithmeticException("No student in the class, average calculation aborted!");
-        }
-        double sum = 0;
-        int count = 0;
-        for (Student student : students) {
-            double studentAvg = student.calculateSubjectAverage(subject);
-            if (studentAvg > 0) {
-                sum += studentAvg;
-                count++;
-            }
-        }
-        if (sum == 0) {
-            throw new ArithmeticException("No marks present, average calculation aborted!");
-        }
-        return Math.round(100 * sum / count) / 100.;
+        HasValidity.forNullity(subject, "Subject");
+        return calculateAverageGeneral(subject);
     }
 
     public Student findStudentByName(String name) {
@@ -117,19 +111,6 @@ public class ClassRecords {
             sb.append(", ").append(students.get(i).getName());
         }
         return sb.toString();
-    }
-
-    private void validateArgs(String className, Random random) {
-        if (random == null) {
-            throw new NullPointerException("Random must not be null!");
-        }
-        if (isEmpty(className)) {
-            throw new IllegalArgumentException("Classname must not be null or empty!");
-        }
-    }
-
-    private boolean isEmpty(String value) {
-        return value == null || value.isBlank();
     }
 
 }

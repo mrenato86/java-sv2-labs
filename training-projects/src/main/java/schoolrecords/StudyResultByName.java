@@ -1,14 +1,14 @@
 package schoolrecords;
 
+import schoolrecords.entiteswithvalidity.HasValidity;
+
 public class StudyResultByName {
 
     private String studentName;
     private double studyAverage;
 
     public StudyResultByName(String studentName, double studyAverage) {
-        if (isEmpty(studentName)) {
-            throw new IllegalArgumentException("Student name must not be null or empty.");
-        }
+        HasValidity.forEmptiness(studentName);
         this.studentName = studentName;
         this.studyAverage = studyAverage;
     }
@@ -26,7 +26,4 @@ public class StudyResultByName {
         return String.format("%s: %.2f", studentName, studyAverage);
     }
 
-    private boolean isEmpty(String value) {
-        return value == null || value.isBlank();
-    }
 }

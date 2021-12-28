@@ -5,12 +5,13 @@ public enum CommunicationItem {
     ASK_SELECT("Választott menüpont: "),
     ASK_STUDENT("Adja meg a diák nevét: "),
     ASK_SUBJECT("Adja meg a tantárgy sorszámát: "),
+    ASK_TUTOR("Adja meg az oktató sorszámát: "),
+    ASK_MARK("Adja meg az érdemjegyet: "),
     ASK_CONTINUE("Visszatérés a menübe: Enter"),
     TELL_BYE("Viszontlátásra!"),
-    ASK_NAME("Diák neve: "),
     TELL_SUCCESS("Sikeres művelet!"),
     TELL_FAILURE("Sikertelen művelet!"),
-    TELL_RESULT("A kért adat: "),
+    TELL_RESULT("A sorsolás eredménye: "),
     TELL_WRONG_MENU("Nem létező menüpont!"),
     TELL_WRONG_INPUT("Hibás bevitel!");
 

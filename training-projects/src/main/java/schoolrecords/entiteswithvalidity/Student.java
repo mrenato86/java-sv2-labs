@@ -1,17 +1,17 @@
-package schoolrecords;
+package schoolrecords.entiteswithvalidity;
+
+import schoolrecords.SchoolStatistics;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Student {
+public class Student implements HasValidity {
 
-    private String name;
+    private final String name;
     private final List<Mark> marks = new ArrayList<>();
 
     public Student(String name) {
-        if (isEmpty(name)) {
-            throw new IllegalArgumentException("Student name must not be empty!");
-        }
+        HasValidity.forEmptiness(name, "Student name");
         this.name = name;
     }
 
@@ -20,36 +20,30 @@ public class Student {
     }
 
     public void grading(Mark mark) {
-        if (mark == null) {
-            throw new NullPointerException("Mark must not be null!");
-        }
+        HasValidity.forNullity(mark, "Mark");
         marks.add(mark);
     }
 
     public double calculateAverage() {
-        double sum = 0;
+        List<Double> grades = new ArrayList<>();
         for (Mark mark : marks) {
-            sum += mark.getMarkType().getGrade();
+            grades.add((double) mark.getMarkType().getGrade());
         }
-        return Math.round(100 * sum / marks.size()) / 100.;
+        return SchoolStatistics.getAvg(grades);
     }
 
     public double calculateSubjectAverage(Subject subject) {
-        double sum = 0;
-        int count = 0;
+        List<Double> grades = new ArrayList<>();
         for (Mark mark : marks) {
             if (mark.getSubject().equalTo(subject)) {
-                sum += mark.getMarkType().getGrade();
-                count++;
+                grades.add((double) mark.getMarkType().getGrade());
             }
         }
-        return Math.round(100 * sum / count) / 100.;
+        return SchoolStatistics.getAvg(grades);
     }
 
     public boolean equalTo(Student other) {
-        if (other == null) {
-            throw new NullPointerException("Student must not be null!");
-        }
+        HasValidity.forNullity(other, "Student");
         return this.name.equals(other.name);
     }
 
@@ -64,7 +58,4 @@ public class Student {
         return sb.deleteCharAt(sb.length() - 1).toString();
     }
 
-    private boolean isEmpty(String value) {
-        return value == null || value.isBlank();
-    }
 }

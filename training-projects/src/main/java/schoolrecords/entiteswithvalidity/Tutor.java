@@ -1,14 +1,15 @@
-package schoolrecords;
+package schoolrecords.entiteswithvalidity;
 
 import java.util.List;
 
-public class Tutor {
+public class Tutor implements HasValidity {
 
     private String name;
     private List<Subject> taughtSubjects;
 
     public Tutor(String name, List<Subject> taughtSubjects) {
-        validateArgs(name, taughtSubjects);
+        HasValidity.forEmptiness(name);
+        HasValidity.forGeneralNullity(taughtSubjects);
         this.name = name.strip();
         this.taughtSubjects = taughtSubjects;
     }
@@ -26,16 +27,4 @@ public class Tutor {
         return false;
     }
 
-    private void validateArgs(String name, List<Subject> taughtSubjects) {
-        if (taughtSubjects == null) {
-            throw new NullPointerException("Taught subjects must be provided!");
-        }
-        if (isEmpty(name)) {
-            throw new IllegalArgumentException("Tutor's name must not be null or empty!");
-        }
-    }
-
-    private boolean isEmpty(String value) {
-        return value == null || value.isBlank();
-    }
 }

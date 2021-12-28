@@ -22,6 +22,6 @@ public enum MenuItem {
 
     @Override
     public String toString() {
-        return String.format("%2d %s", this.ordinal() + 1, menuText);
+        return String.format("%2d. %s", this.ordinal() + 1, menuText);
     }
 }
