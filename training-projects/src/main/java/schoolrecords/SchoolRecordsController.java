@@ -122,6 +122,7 @@ public class SchoolRecordsController {
             throw new IllegalStateException(TELL_WRONG_INPUT.toString());
         }
         student.grading(new Mark(markType, subject, tutor));
+        System.out.println(TELL_SUCCESS);
     }
 
     private void listStudyResults() {
@@ -157,7 +158,7 @@ public class SchoolRecordsController {
 
     private int getNumberInput(CommunicationItem question, int end) {
         int result = getNumberInput(question);
-        if (result < 0 || result > end) {
+        if (result < 1 || result > end) {
             throw new IllegalStateException(TELL_WRONG_INPUT.toString());
         }
         return result;

@@ -5,7 +5,7 @@ public class Subject implements HasValidity {
     private final String subjectName;
 
     public Subject(String subjectName) {
-        HasValidity.forEmptiness(subjectName);
+        HasValidity.forEmptiness("Subject name must not be empty!", subjectName);
         this.subjectName = subjectName.strip();
     }
 
@@ -14,7 +14,7 @@ public class Subject implements HasValidity {
     }
 
     public boolean equalTo(Subject other) {
-        HasValidity.forNullity(other, "Subject");
+        HasValidity.forArgumentNullity("Subject must not be null!", other);
         return this.subjectName.equals(other.subjectName);
     }
 

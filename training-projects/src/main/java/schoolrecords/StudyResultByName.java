@@ -8,7 +8,7 @@ public class StudyResultByName {
     private double studyAverage;
 
     public StudyResultByName(String studentName, double studyAverage) {
-        HasValidity.forEmptiness(studentName);
+        HasValidity.forEmptiness("Student name must not be empty!", studentName);
         this.studentName = studentName;
         this.studyAverage = studyAverage;
     }

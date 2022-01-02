@@ -8,8 +8,8 @@ public class Tutor implements HasValidity {
     private List<Subject> taughtSubjects;
 
     public Tutor(String name, List<Subject> taughtSubjects) {
-        HasValidity.forEmptiness(name);
-        HasValidity.forGeneralNullity(taughtSubjects);
+        HasValidity.forEmptiness("Tutor name must not be empty!", name);
+        HasValidity.forGeneralNullity("Taught subjects must not be null!", taughtSubjects);
         this.name = name.strip();
         this.taughtSubjects = taughtSubjects;
     }

@@ -7,8 +7,8 @@ public class Mark implements HasValidity {
     private final Tutor tutor;
 
     public Mark(MarkType markType, Subject subject, Tutor tutor) {
-        HasValidity.forArguments("Both subject and tutor must be provided!", subject, tutor);
-        HasValidity.forNullity(markType, "MarkType");
+        HasValidity.forArgumentNullity("Both subject and tutor must be provided!", subject, tutor);
+        HasValidity.forArgumentNullity("MarkType must not be null!", markType);
         this.markType = markType;
         this.subject = subject;
         this.tutor = tutor;

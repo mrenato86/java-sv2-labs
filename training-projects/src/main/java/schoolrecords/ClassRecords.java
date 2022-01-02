@@ -15,8 +15,8 @@ public class ClassRecords {
     private final List<Student> students = new ArrayList<>();
 
     public ClassRecords(String className, Random random) {
-        HasValidity.forEmptiness(className);
-        HasValidity.forGeneralNullity(random);
+        HasValidity.forEmptiness("Class name must not be empty!", className);
+        HasValidity.forGeneralNullity("Random must not be null!", random);
         this.className = className;
         this.random = random;
     }
@@ -26,7 +26,7 @@ public class ClassRecords {
     }
 
     public boolean addStudent(Student student) {
-        HasValidity.forNullity(student, "Student");
+        HasValidity.forArgumentNullity("Student must not be null!", student);
         if (students.isEmpty()) {
             return students.add(student);
         }
@@ -39,7 +39,7 @@ public class ClassRecords {
     }
 
     public boolean removeStudent(Student student) {
-        HasValidity.forNullity(student, "Student");
+        HasValidity.forArgumentNullity("Student must not be null!", student);
         try {
             Student sought = findStudentByName(student.getName());
             return students.remove(sought);
@@ -70,7 +70,7 @@ public class ClassRecords {
     }
 
     public double calculateClassAverageBySubject(Subject subject) {
-        HasValidity.forNullity(subject, "Subject");
+        HasValidity.forArgumentNullity("Subject must not be null!", subject);
         return calculateAverageGeneral(subject);
     }
 

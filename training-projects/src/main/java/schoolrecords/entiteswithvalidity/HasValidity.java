@@ -2,7 +2,7 @@ package schoolrecords.entiteswithvalidity;
 
 public interface HasValidity {
 
-    static void forArguments(String message, HasValidity... entities) {
+    static void forArgumentNullity(String message, HasValidity... entities) {
         for (HasValidity entity : entities) {
             if (entity == null) {
                 throw new NullPointerException(message);
@@ -10,25 +10,15 @@ public interface HasValidity {
         }
     }
 
-    static void forGeneralNullity(Object o) {
+    static void forGeneralNullity(String message, Object o) {
         if (o == null) {
-            throw new NullPointerException("All arguments must be provided!");
+            throw new NullPointerException(message);
         }
     }
 
-    static void forNullity(HasValidity entity, String messagePrefix) {
-        if (entity == null) {
-            throw new NullPointerException(messagePrefix + " must not be null!");
-        }
-    }
-
-    static void forEmptiness(String name) {
-        forEmptiness(name, "Name");
-    }
-
-    static void forEmptiness(String name, String messagePrefix) {
+    static void forEmptiness(String message, String name) {
         if (isEmpty(name)) {
-            throw new IllegalArgumentException(messagePrefix + " must not be empty!");
+            throw new IllegalArgumentException(message);
         }
     }
 

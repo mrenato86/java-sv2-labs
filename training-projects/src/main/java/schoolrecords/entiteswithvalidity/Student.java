@@ -11,7 +11,7 @@ public class Student implements HasValidity {
     private final List<Mark> marks = new ArrayList<>();
 
     public Student(String name) {
-        HasValidity.forEmptiness(name, "Student name");
+        HasValidity.forEmptiness("Student name must not be empty!", name);
         this.name = name;
     }
 
@@ -20,30 +20,31 @@ public class Student implements HasValidity {
     }
 
     public void grading(Mark mark) {
-        HasValidity.forNullity(mark, "Mark");
+        HasValidity.forArgumentNullity("Mark must not be null!", mark);
         marks.add(mark);
     }
 
-    public double calculateAverage() {
+    private double calculateAverageGeneral(Subject subject) {
         List<Double> grades = new ArrayList<>();
         for (Mark mark : marks) {
-            grades.add((double) mark.getMarkType().getGrade());
-        }
-        return SchoolStatistics.getAvg(grades);
-    }
-
-    public double calculateSubjectAverage(Subject subject) {
-        List<Double> grades = new ArrayList<>();
-        for (Mark mark : marks) {
-            if (mark.getSubject().equalTo(subject)) {
+            if (subject == null || mark.getSubject().equalTo(subject)) {
                 grades.add((double) mark.getMarkType().getGrade());
             }
         }
         return SchoolStatistics.getAvg(grades);
     }
 
+    public double calculateAverage() {
+        return calculateAverageGeneral(null);
+    }
+
+    public double calculateSubjectAverage(Subject subject) {
+        HasValidity.forArgumentNullity("Subject must not be null!", subject);
+        return calculateAverageGeneral(subject);
+    }
+
     public boolean equalTo(Student other) {
-        HasValidity.forNullity(other, "Student");
+        HasValidity.forArgumentNullity("Student must not be null!", other);
         return this.name.equals(other.name);
     }
 
