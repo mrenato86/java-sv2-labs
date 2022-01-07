@@ -1,4 +1,4 @@
-package schoolrecords.entiteswithvalidity;
+package schoolrecords.entitieswithvalidity;
 
 public enum MarkType implements HasValidity {
 

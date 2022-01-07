@@ -2,7 +2,7 @@ package schoolrecords;
 
 
 import org.junit.jupiter.api.Test;
-import schoolrecords.entiteswithvalidity.*;
+import schoolrecords.entitieswithvalidity.*;
 
 import java.util.Arrays;
 

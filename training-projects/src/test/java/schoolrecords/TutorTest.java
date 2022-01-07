@@ -2,8 +2,8 @@ package schoolrecords;
 
 
 import org.junit.jupiter.api.Test;
-import schoolrecords.entiteswithvalidity.Subject;
-import schoolrecords.entiteswithvalidity.Tutor;
+import schoolrecords.entitieswithvalidity.Subject;
+import schoolrecords.entitieswithvalidity.Tutor;
 
 import java.util.Arrays;
 

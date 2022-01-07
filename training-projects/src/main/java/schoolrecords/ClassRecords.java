@@ -1,8 +1,8 @@
 package schoolrecords;
 
-import schoolrecords.entiteswithvalidity.HasValidity;
-import schoolrecords.entiteswithvalidity.Student;
-import schoolrecords.entiteswithvalidity.Subject;
+import schoolrecords.entitieswithvalidity.HasValidity;
+import schoolrecords.entitieswithvalidity.Student;
+import schoolrecords.entitieswithvalidity.Subject;
 
 import java.util.ArrayList;
 import java.util.List;

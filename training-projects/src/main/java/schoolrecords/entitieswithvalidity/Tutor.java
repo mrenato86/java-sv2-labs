@@ -1,4 +1,4 @@
-package schoolrecords.entiteswithvalidity;
+package schoolrecords.entitieswithvalidity;
 
 import java.util.List;
 

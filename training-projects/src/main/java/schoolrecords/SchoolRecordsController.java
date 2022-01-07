@@ -1,6 +1,6 @@
 package schoolrecords;
 
-import schoolrecords.entiteswithvalidity.*;
+import schoolrecords.entitieswithvalidity.*;
 import schoolrecords.outputenums.CommunicationItem;
 import schoolrecords.outputenums.MenuItem;
 
@@ -17,6 +17,7 @@ public class SchoolRecordsController {
     private final List<Subject> subjects = new ArrayList<>();
     private final ClassRecords classRecords = new ClassRecords("Fourth Grade A", new Random());
 
+    //InitSchool data from: ClassRecordsTest
     private void initSchool() {
         subjects.addAll(List.of(
                 new Subject("földrajz"),

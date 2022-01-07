@@ -2,10 +2,10 @@ package schoolrecords;
 
 
 import org.junit.jupiter.api.Test;
-import schoolrecords.entiteswithvalidity.Mark;
-import schoolrecords.entiteswithvalidity.MarkType;
-import schoolrecords.entiteswithvalidity.Subject;
-import schoolrecords.entiteswithvalidity.Tutor;
+import schoolrecords.entitieswithvalidity.Mark;
+import schoolrecords.entitieswithvalidity.MarkType;
+import schoolrecords.entitieswithvalidity.Subject;
+import schoolrecords.entitieswithvalidity.Tutor;
 
 import java.util.Arrays;
 

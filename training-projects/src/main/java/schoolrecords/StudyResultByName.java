@@ -1,6 +1,6 @@
 package schoolrecords;
 
-import schoolrecords.entiteswithvalidity.HasValidity;
+import schoolrecords.entitieswithvalidity.HasValidity;
 
 public class StudyResultByName {
 
