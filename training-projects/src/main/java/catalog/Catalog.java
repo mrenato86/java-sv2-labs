@@ -26,8 +26,20 @@ public class Catalog {
     }
 
     public List<CatalogItem> findByCriteria(SearchCriteria searchCriteria) {
-        //TODO continue
-        return null;
+        List<CatalogItem> result = new ArrayList<>();
+        for (CatalogItem item:catalogItems) {
+            if(checkCriteria(item,searchCriteria)){
+                result.add(item);
+            }
+        }
+        return result;
+
+    }
+
+    private boolean checkCriteria(CatalogItem item, SearchCriteria criteria) {
+        boolean checkTitle = !criteria.hasTitle() || item.getTitles().contains(criteria.getTitle());
+        boolean checkContributor = !criteria.hasContributor() || item.getContributors().contains(criteria.getContributor());
+        return checkTitle && checkContributor;
     }
 
     public int getFullLength() {
