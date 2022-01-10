@@ -22,7 +22,6 @@ class ElectricityTest {
     @Test
     void testWriteStreets() throws IOException {
         Path tempPath = temporaryFolder.toPath().resolve("streets.txt");
-        System.out.println(tempPath);
 
         electricity.writeStreets(tempPath);
 
