@@ -22,14 +22,14 @@ Ezekkel a leckékkel tovább mélyíthetitek a lambda kifejezésekkel és a stre
 Akinek a bevezető leckék után hiányérzete maradt vagy szeretne tovább tanulni a haladó tanfolyamon, az
 mindenképpen végezze el ezeket a leckéket is.
 
-* [ ] [Lambda kifejezések videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16981999-lambda-kifejezesek)
-* [ ] Lambda kifejezések gyakorlati feladat
+* [x] [Lambda kifejezések videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16981999-lambda-kifejezesek)
+* [x] Lambda kifejezések gyakorlati feladat
 * [x] [Az Optional osztály használata videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982013-az-optional-osztaly-hasznalata)
 * [x] Az Optional osztály használata gyakorlati feladat
-* [ ] [Comparator módosítások videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982014-comparator-modositasok)
-* [ ] Comparator módosítások gyakorlati feladat
-* [ ] [Streamek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982034-streamek)
-* [ ] Streamek gyakorlati feladat
+* [x] [Comparator módosítások videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982014-comparator-modositasok)
+* [x] Comparator módosítások gyakorlati feladat
+* [x] [Streamek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982034-streamek)
+* [x] Streamek gyakorlati feladat
 * [ ] [Közbenső műveletek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982041-kozbenso-muveletek)
 * [ ] Közbenső műveletek gyakorlati feladat
 * [ ] [Primitívek használata streamekben videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982044-primitivek-hasznalata-streamekben)
@@ -45,5 +45,5 @@ mindenképpen végezze el ezeket a leckéket is.
 * [x] 2022-01-18 konzultáció gyakorlati feladat
 * [x] 2022-01-20 konzultáció részvétel/videó
 * [x] 2022-01-20 konzultáció gyakorlati feladat
-* [ ] 2022-01-21 konzultáció részvétel/videó
-* [ ] 2022-01-21 konzultáció gyakorlati feladat
+* [x] 2022-01-21 konzultáció részvétel/videó
+* [x] 2022-01-21 konzultáció gyakorlati feladat
