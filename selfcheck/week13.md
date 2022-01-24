@@ -30,12 +30,12 @@ mindenképpen végezze el ezeket a leckéket is.
 * [x] Comparator módosítások gyakorlati feladat
 * [x] [Streamek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982034-streamek)
 * [x] Streamek gyakorlati feladat
-* [ ] [Közbenső műveletek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982041-kozbenso-muveletek)
-* [ ] Közbenső műveletek gyakorlati feladat
-* [ ] [Primitívek használata streamekben videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982044-primitivek-hasznalata-streamekben)
-* [ ] Primitívek használata streamekben gyakorlati feladat
-* [ ] [Collectorok videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982047-collectorok)
-* [ ] Collectorok gyakorlati feladat
+* [x] [Közbenső műveletek videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982041-kozbenso-muveletek)
+* [x] Közbenső műveletek gyakorlati feladat
+* [x] [Primitívek használata streamekben videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982044-primitivek-hasznalata-streamekben)
+* [x] Primitívek használata streamekben gyakorlati feladat
+* [x] [Collectorok videó](https://e-learning.training360.com/courses/take/java-se-halado-koll/lessons/16982047-collectorok)
+* [x] Collectorok gyakorlati feladat
 
 ## Konzultációk
 
