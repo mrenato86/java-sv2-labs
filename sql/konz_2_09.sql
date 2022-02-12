@@ -50,7 +50,7 @@ WHERE nepesseg = (SELECT MIN(nepesseg) FROM orszagok)
 	OR terulet = (SELECT MIN(terulet) FROM orszagok)
 	OR terulet = (SELECT MAX(terulet) FROM orszagok);
 
--melyik az a 3 ország amely területében legközelebb van Mo területéhez
+--melyik az a 3 ország amely területében legközelebb van Mo területéhez
 SELECT orszag, ABS(terulet - (SELECT terulet FROM orszagok WHERE orszag = 'Magyarország')) AS elteres
 FROM orszagok
 WHERE orszag<>'Magyarország'
@@ -58,6 +58,10 @@ ORDER BY elteres
 LIMIT 3
 
 --Legközelebbi területeltérésű ország
+SELECT orszag FROM orszagok
+GROUP BY ABS(terulet - (SELECT terulet FROM orszagok WHERE orszag = 'Magyarország'))
+LIMIT 1,1;
+
 SELECT orszag FROM orszagok
 WHERE ABS(terulet - (SELECT terulet FROM orszagok WHERE orszag = 'Magyarország')) =
 (SELECT MIN(ABS(terulet - (SELECT terulet FROM orszagok WHERE orszag = 'Magyarország'))) 
