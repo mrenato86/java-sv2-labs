@@ -112,7 +112,7 @@ public class ActivityTrackerMain {
                         Type.valueOf(result.getString("activity_type"))
                 );
             } else {
-                throw new IllegalArgumentException("Cannot find activity by query " + stmt);
+                throw new IllegalArgumentException("Cannot find activity by query!");
             }
         } catch (SQLException se) {
             throw new IllegalStateException("Error executing SELECT.", se);
