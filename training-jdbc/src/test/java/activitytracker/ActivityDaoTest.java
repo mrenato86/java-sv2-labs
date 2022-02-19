@@ -8,12 +8,15 @@ import org.mariadb.jdbc.MariaDbDataSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.SQLException;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Properties;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 class ActivityDaoTest {
     ActivityDao activityDao;
@@ -65,6 +68,30 @@ class ActivityDaoTest {
     void testListActivities() {
         List<Activity> result = activityDao.listActivities();
         assertEquals(6, result.size());
+    }
+
+    @Test
+    void testSaveActivityWithTrackPointsOK() {
+        List<TrackPoint> trackPoints = List.of(
+                new TrackPoint(LocalDate.of(2021, 2, 24), 47.2181020, 18.5411940),
+                new TrackPoint(LocalDate.of(2021, 2, 24), 47.2181230, 18.5411780),
+                new TrackPoint(LocalDate.of(2020, 12, 14), 47.2302470, 18.5472280)
+        );
+        Activity activity = new Activity(LocalDateTime.of(2020, 12, 14, 15, 30), "Running With GPS", Type.RUNNING, trackPoints);
+        int id = activityDao.saveActivityWithTrackPoints(activity);
+        assertEquals(activity, activityDao.findActivityWithTrackPointsById(id));
+    }
+
+    @Test
+    void testSaveActivityWithTrackPointsWrong() {
+        List<TrackPoint> trackPoints = List.of(
+                new TrackPoint(LocalDate.of(2020, 12, 14), 47.2302470, 18.5472280),
+                new TrackPoint(LocalDate.of(2020, 12, 14), 47.2302550, 181.5472310),
+                new TrackPoint(LocalDate.of(2020, 12, 14), 47.2302552, 18.5472312)
+        );
+        Activity activity = new Activity(LocalDateTime.of(2020, 12, 14, 15, 30), "Running With GPS", Type.RUNNING, trackPoints);
+        assertThrows(IllegalArgumentException.class,
+                () -> activityDao.saveActivityWithTrackPoints(activity));
     }
 
 }
