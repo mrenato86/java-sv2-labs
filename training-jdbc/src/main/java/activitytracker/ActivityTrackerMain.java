@@ -34,7 +34,7 @@ public class ActivityTrackerMain {
             for (Activity activity : activityTrackerMain.makeActivities()) {
                 activityTrackerMain.insertActivity(conn, activity);
             }
-            System.out.println(activityTrackerMain.getActivityById(conn,3));
+            System.out.println(activityTrackerMain.getActivityById(conn, 3));
             System.out.println();
             activityTrackerMain.getActivities(conn).forEach(System.out::println);
 
