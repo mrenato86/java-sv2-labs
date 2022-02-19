@@ -38,21 +38,22 @@ class ActivityDaoTest {
         activityDao = new ActivityDao(dataSource);
 
         testActivities = new ArrayList<>(List.of(
-                new Activity(1, LocalDateTime.of(2022, 2, 15, 6, 30), "running activity", Type.RUNNING),
-                new Activity(2, LocalDateTime.of(2022, 2, 13, 7, 0), "basketball activity", Type.BASKETBALL),
-                new Activity(3, LocalDateTime.of(2022, 2, 12, 19, 0), "hiking activity", Type.HIKING),
-                new Activity(4, LocalDateTime.of(2022, 2, 14, 6, 20), "running activity", Type.RUNNING),
-                new Activity(5, LocalDateTime.of(2022, 2, 15, 7, 20), "basketball activity", Type.BASKETBALL),
-                new Activity(6, LocalDateTime.of(2022, 2, 11, 20, 25), "biking activity", Type.BIKING)
+                new Activity(LocalDateTime.of(2022, 2, 15, 6, 30), "running activity", Type.RUNNING),
+                new Activity(LocalDateTime.of(2022, 2, 13, 7, 0), "basketball activity", Type.BASKETBALL),
+                new Activity(LocalDateTime.of(2022, 2, 12, 19, 0), "hiking activity", Type.HIKING),
+                new Activity(LocalDateTime.of(2022, 2, 14, 6, 20), "running activity", Type.RUNNING),
+                new Activity(LocalDateTime.of(2022, 2, 15, 7, 20), "basketball activity", Type.BASKETBALL),
+                new Activity(LocalDateTime.of(2022, 2, 11, 20, 25), "biking activity", Type.BIKING)
         ));
         testActivities.forEach(activityDao::saveActivity);
     }
 
     @Test
-    void testSaveActivity(){
-        Activity last = new Activity(7,LocalDateTime.now().withNano(0), "biking activity", Type.BIKING);
-        activityDao.saveActivity(last);
-        assertEquals(last, activityDao.findActivityById(7));
+    void testSaveActivity() {
+        Activity last = new Activity(LocalDateTime.now().withNano(0), "biking activity", Type.BIKING);
+        Activity activityWithKey = activityDao.saveActivity(last);
+        assertEquals(7, activityWithKey.getId());
+        assertEquals(last, activityWithKey);
     }
 
     @Test

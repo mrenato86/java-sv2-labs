@@ -52,11 +52,11 @@ public class Activity {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Activity activity = (Activity) o;
-        return id == activity.id && Objects.equals(startTime, activity.startTime) && Objects.equals(desc, activity.desc) && type == activity.type;
+        return Objects.equals(startTime, activity.startTime) && Objects.equals(desc, activity.desc) && type == activity.type;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, startTime, desc, type);
+        return Objects.hash(startTime, desc, type);
     }
 }
