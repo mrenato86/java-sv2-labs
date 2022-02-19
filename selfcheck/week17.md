@@ -7,7 +7,7 @@ Ezen a héten azt fogjátok megtanulni, hogyan lehet adatbázist kezelni Javabó
 ### Bevezetés és segédanyagok
 
 * [x] Bevezetés: általános bevezető és link a megoldandó gyakorlati feladatokhoz
-* [ ] [Gyakorlati feladatok](https://github.com/Training360/java-jpa-public/blob/master/jdbc-lab.md)
+* [x] [Gyakorlati feladatok](https://github.com/Training360/java-jpa-public/blob/master/jdbc-lab.md)
 
 ## JDBC
 
@@ -27,4 +27,4 @@ Ezen a héten azt fogjátok megtanulni, hogyan lehet adatbázist kezelni Javabó
 * [x] 2022-02-17 konzultáció részvétel/videó
 * [x] 2022-02-17 konzultáció gyakorlati feladat
 * [x] 2022-02-18 konzultáció részvétel/videó
-* [ ] 2022-02-18 konzultáció gyakorlati feladat
+* [x] 2022-02-18 konzultáció gyakorlati feladat
